@@ -4,13 +4,14 @@ import { Suspense, useContext } from 'react';
 import { AboutPageAsync } from './AboutPage/AboutPageAsync';
 import { MainPageAsync } from './MainPage/MainPageAsync';
 import { useTheme } from './theme/useTheme';
+import { classNames } from './helpers/classNames';
 
 const App = () => {
 
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>Chenge theme</button>
             <Link to={'/'}>Main</Link>
             <Link to={'/about'}>About</Link>
