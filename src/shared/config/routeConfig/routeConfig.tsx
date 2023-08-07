@@ -14,11 +14,11 @@ export const RoutePath: Record<AppRoutes, string> = {
 
 export const routeConfig: RouteProps[] = [
     {
-        path: AppRoutes.Main,
+        path: RoutePath.main,
         element: <MainPage/>
     },
     {
-        path: AppRoutes.About,
+        path: RoutePath.about,
         element: <AboutPage/>
     }
 ]
