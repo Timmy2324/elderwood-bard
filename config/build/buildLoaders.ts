@@ -4,11 +4,22 @@ import { BuildOptions } from './types/config';
 
 export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
 
+    const babelLoader = {
+      test: /\.(js|jsx|tsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env'],
+        }
+      }
+    }
+
     const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      };
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    };
 
     const cssLoader = {
       test: /\.s[ac]ss$/i,
@@ -46,6 +57,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
     return [
         fileLoader,
         svgLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
       ]
