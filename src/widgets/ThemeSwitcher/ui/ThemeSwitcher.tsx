@@ -1,16 +1,15 @@
-import { useTheme } from "@/app/providers/ThemeProvider";
-import { classNames } from "@/shared/lib/classNames";
+import { FC } from 'react';
+import { useTheme, Theme } from '@/app/providers/ThemeProvider';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './ThemeSwitcher.module.scss';
-import { FC } from "react";
-import { Theme } from "@/app/providers/ThemeProvider";
 
 interface ThemeSwitcherProps {
     className?: string;
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({className}) => {
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
     const { theme, changeTheme } = useTheme();
-    
+
     return (
         <select
             className={classNames(cls.themeSwitcher, {}, [className])}
@@ -25,4 +24,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({className}) => {
             </option>
         </select>
     );
-}
+};

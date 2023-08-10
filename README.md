@@ -22,3 +22,11 @@ Your app is ready to be deployed!
 
 Builds the app for development to the `build` folder.
 The build is not minified and the filenames include the hashes.
+
+### `npm run lint:ts`
+
+Helps you find with your JavaScript code
+
+### `npm run lint:ts:fix`
+
+Helps you find and fix problems with your JavaScript code
