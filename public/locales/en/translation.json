@@ -1,3 +1,8 @@
 {
-    "lang": "eng"
+    "Loading": "Loading...",
+    "Main": "Main",
+    "About": "About",
+    "lang": "eng",
+    "Theme light": "light",
+    "Theme dark": "dark"
 }

@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useTheme, Theme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames';
-import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -9,18 +9,19 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
     const { theme, changeTheme } = useTheme();
+    const { t } = useTranslation();
 
     return (
         <select
-            className={classNames(cls.themeSwitcher, {}, [className])}
+            className={classNames('', {}, [className])}
             defaultValue={theme}
             onChange={(e) => changeTheme(e.target.value as Theme)}
         >
             <option value={Theme.LIGHT}>
-                light
+                {t('Theme light')}
             </option>
             <option value={Theme.DARK}>
-                dark
+                {t('Theme dark')}
             </option>
         </select>
     );
