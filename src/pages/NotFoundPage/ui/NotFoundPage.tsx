@@ -6,7 +6,7 @@ export const NotFoundPage = () => {
     const { t } = useTranslation('notFound');
 
     return (
-        <div className={classNames(cls.notFound, {}, [])}>
+        <div className={classNames(cls.notFound)}>
             {t('Page not found')}
         </div>
     );
